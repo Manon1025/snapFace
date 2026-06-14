@@ -1,0 +1,56 @@
+<div class="m-14 flex items-center justify-center h-full">
+
+
+<div class=" flex items-center justify-center h-full">
+
+  <div
+    class="flex flex-col gap-3 m-4 bg-white w-96 h-full p-6 border border-purple-200 rounded-md shadow-sm hover:bg-purple-50 transition-all"
+    [ngClass]="{ snapped: userAsSnap }"
+  >
+    <button class="pi-arrow-left justify-start w-20 bg-gray-200 px-3 py-1 rounded-md text-sm font-semibold text-purple-600 hover:bg-purple-200 hover:shadow-md transition-all"><a routerLink="/facesnaps">Retour</a></button>
+    <h2 class="text-2xl font-semibold tracking-tight text-purple-700 leading-8 line-clamp-2 min-h-[4rem]">
+      {{ faceSnap.title | uppercase }}
+    </h2>
+
+    <div class="min-h-[1.25rem]">
+      @if (faceSnap.location) {
+        <p class="text-gray-500 text-sm">📍 {{ faceSnap.location }}</p>
+      } @else {
+        <p class="text-gray-400 text-sm italic">Localisation non spécifiée</p>
+      }
+    </div>
+
+    <div class="h-56 w-full flex-shrink-0 overflow-hidden rounded-md">
+      <img
+        class="h-full w-full object-cover rounded-lg"
+        [src]="faceSnap.imageUrl"
+        [alt]="faceSnap.title"
+      />
+    </div>
+
+    <p class="text-gray-600 text-sm line-clamp-3 min-h-[3.75rem]">
+      {{ faceSnap.description }}
+    </p>
+
+    <p class="text-gray-400 text-xs">
+      FaceSnap créé le {{ faceSnap.createdAt | date: 'd MMMM yyyy, à HH:mm' }}
+    </p>
+
+    <div class="flex justify-between items-center mt-auto pt-4 w-full border-t border-purple-100">
+      <button
+        (click)="onSnap()"
+        class="bg-gray-200 px-3 py-1 rounded-md text-sm font-semibold text-purple-600 hover:bg-purple-200 hover:shadow-md transition-all"
+      >
+        {{ snapButtonText }}
+      </button>
+      <span
+        class="text-sm font-semibold"
+        [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }"
+      >
+        ❤️ {{ faceSnap.snaps }}
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+
