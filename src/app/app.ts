@@ -41,7 +41,7 @@ export class App implements OnInit {
         'https://i.pinimg.com/736x/ba/8b/e2/ba8be2085df1570b6b7716e21359d768.jpg',
         'Vive LoL',
         new Date(),
-        50,
+        255,
       ),
     ];
 
