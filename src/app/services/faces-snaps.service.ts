@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FaceSnap } from '../models/face-snap';
+import { SnapType } from '../models/snap-type.type';
 
 @Injectable({
   providedIn: 'root',
@@ -34,5 +35,17 @@ export class FacesService {
   // * Méthode pour récupérer une copie du tableau qui sera indépendant grâce au Spread
   getFaceSnaps(): FaceSnap[] {
     return [...this.faceSnaps];
+  }
+
+  snapFaceSnapById(faceSnapId: string, snapType: SnapType): void {
+    const foundFaceSnap = this.faceSnaps.find(
+      (faceSnap) => faceSnap.id === faceSnapId,
+    );
+
+    if (!foundFaceSnap) {
+      throw new Error(`No faceSnap found with id ${faceSnapId}`);
+    }
+
+    foundFaceSnap.snap(snapType);
   }
 }

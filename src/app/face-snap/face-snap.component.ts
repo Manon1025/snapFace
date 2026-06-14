@@ -9,6 +9,7 @@ import {
   NgStyle,
   UpperCasePipe,
 } from '@angular/common';
+import { FacesService } from '../services/faces-snaps.service';
 
 @Component({
   selector: 'app-face-snap',
@@ -42,7 +43,9 @@ export class FaceSnapComponent implements OnInit {
   // ! propriété lié à l'interface
   snapButtonText!: string;
   userAsSnap!: boolean;
-  myLargeNumber = 4667916.76;
+  //myLargeNumber = 4667916.76;
+
+  constructor(private faceSnapService: FacesService) {}
 
   // ! Initialisation des données
   /*
@@ -68,13 +71,13 @@ export class FaceSnapComponent implements OnInit {
   }
 
   unSnap(): void {
-    this.faceSnap().removeSnap();
+    this.faceSnapService.snapFaceSnapById(this.faceSnap().id, 'unsnap');
     this.snapButtonText = 'Oh Snap !';
     this.userAsSnap = false;
   }
 
   snap(): void {
-    this.faceSnap().addSnap();
+    this.faceSnapService.snapFaceSnapById(this.faceSnap().id, 'snap');
     this.snapButtonText = 'Oops, unSnap !';
     this.userAsSnap = true;
   }
