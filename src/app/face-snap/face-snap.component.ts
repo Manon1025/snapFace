@@ -2,6 +2,7 @@ import { Component, input, InputSignal, OnInit, output } from '@angular/core';
 import { Button } from 'primeng/button';
 import { FaceSnap } from '../models/face-snap';
 import {
+  CurrencyPipe,
   DatePipe,
   DecimalPipe,
   NgClass,
@@ -11,7 +12,15 @@ import {
 
 @Component({
   selector: 'app-face-snap',
-  imports: [Button, NgStyle, NgClass, UpperCasePipe, DatePipe, DecimalPipe],
+  imports: [
+    Button,
+    NgStyle,
+    NgClass,
+    UpperCasePipe,
+    DatePipe,
+    DecimalPipe,
+    CurrencyPipe,
+  ],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss',
 })
