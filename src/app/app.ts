@@ -25,7 +25,7 @@ export class App implements OnInit {
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Fpremium-photo%2Fillustration-ghost-violet-tones_989263-18988.jpg&f=1&nofb=1&ipt=4d658a8e647a070ca22272ba0b4e293787d4cd68503dd385230e3e94d4a9509f',
         'Mon meilleur ami depuis toujours',
         new Date(),
-        0,
+        160,
       ),
 
       new FaceSnap(

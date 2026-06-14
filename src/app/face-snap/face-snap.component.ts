@@ -1,11 +1,11 @@
 import { Component, input, InputSignal, OnInit, output } from '@angular/core';
 import { Button } from 'primeng/button';
 import { FaceSnap } from '../models/face-snap';
-import { NgStyle } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-face-snap',
-  imports: [Button, NgStyle],
+  imports: [Button, NgStyle, NgClass],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss',
 })

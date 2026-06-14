@@ -31,7 +31,7 @@
 
     <div class="flex justify-end items-end mt-auto pt-4 w-full">
       <p-button (onClick)="onSnap()" > {{ snapButtonText }} </p-button>
-      <span class="text-body">❤️ {{ faceSnap().snaps }}</span>
+      <span class="text-body" [ngStyle]="{ color: 'rgb(0, ' + faceSnap().snaps +' ,0)' }">❤️ {{ faceSnap().snaps }}</span>
     </div>
   </div>
 </div>
