@@ -2,6 +2,7 @@ import {
   ApplicationConfig,
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
+  LOCALE_ID,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
@@ -14,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    { provide: LOCALE_ID, useValue: 'fr-FR' },
     providePrimeNG({ theme: { preset: Aura } }),
   ],
 };

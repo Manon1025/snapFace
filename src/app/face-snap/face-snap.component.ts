@@ -1,11 +1,17 @@
 import { Component, input, InputSignal, OnInit, output } from '@angular/core';
 import { Button } from 'primeng/button';
 import { FaceSnap } from '../models/face-snap';
-import { NgClass, NgStyle } from '@angular/common';
+import {
+  DatePipe,
+  DecimalPipe,
+  NgClass,
+  NgStyle,
+  UpperCasePipe,
+} from '@angular/common';
 
 @Component({
   selector: 'app-face-snap',
-  imports: [Button, NgStyle, NgClass],
+  imports: [Button, NgStyle, NgClass, UpperCasePipe, DatePipe, DecimalPipe],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss',
 })
@@ -27,6 +33,7 @@ export class FaceSnapComponent implements OnInit {
   // ! propriété lié à l'interface
   snapButtonText!: string;
   userAsSnap!: boolean;
+  myLargeNumber = 4667916.76;
 
   // ! Initialisation des données
   /*
