@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
+import { Button } from 'primeng/button';
 
 @Component({
   selector: 'app-header',
-  imports: [DecimalPipe],
+  imports: [DecimalPipe, Button],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
