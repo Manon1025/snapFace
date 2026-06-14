@@ -1,4 +1,6 @@
 export class FaceSnap {
+  location?: string; // * Le "?" permet de dire qu'il est optionnel donc peut être null ou undefided
+
   constructor(
     public title: string,
     public imageUrl: string,
@@ -13,5 +15,9 @@ export class FaceSnap {
 
   removeSnap(): void {
     this.snaps--;
+  }
+
+  setLocation(location: string): void {
+    this.location = location;
   }
 }

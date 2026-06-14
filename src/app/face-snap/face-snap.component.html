@@ -6,17 +6,26 @@
       class="mb-3 text-2xl font-semibold tracking-tight text-heading leading-8"
     >
       {{ faceSnap().title }}
-    </h2>
-    <!-- * C'est le string interpolation -->
+    </h2> <!-- * C'est le string interpolation -->
+
+    <!-- * Controle flow block de la localisation -->
+    @if (faceSnap().location) {
+      <p class="text-body"> Localisation : {{ faceSnap().location }}</p>
+    } @else {
+
+      <p class="text-body"> Localisation non spécifiée </p>
+    }
+
+
     <div class="h-48 w-full overflow-hidden rounded-md">
       <img
         class="h-full w-full object-cover rounded-lg"
         [src]="faceSnap().imageUrl"
         [alt]="faceSnap().title"
       />
-    </div>
+    </div> <!-- * C'est ce qu'on appelle l'attribut binding -->
 
-    <!-- * C'est ce qu'on appelle l'attribut binding -->
+
     <p class="text-body">{{ faceSnap().description }}</p>
     <p class="text-body">FaceSnap crée le {{ faceSnap().createdAt }}</p>
 
